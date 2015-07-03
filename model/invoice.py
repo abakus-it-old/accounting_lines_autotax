@@ -7,7 +7,7 @@ class invoice_line_with_custom_create(models.Model):
     _inherit = ['account.invoice.line']
 
     def create(self, cr, uid, values, context=None):
-        if values['invoice_line_tax_id'] == None or values['invoice_line_tax_id'][0] == None or len(values['invoice_line_tax_id'][0][2]) == 0:
+        if 'invoice_line_tax_id' in values and (values['invoice_line_tax_id'] == None or values['invoice_line_tax_id'][0] == None or len(values['invoice_line_tax_id'][0][2]) == 0):
             # NEW TAX COMPUTATION FROM HERE
             values['invoice_line_tax_id'] = None
 
@@ -43,6 +43,5 @@ class invoice_line_with_custom_create(models.Model):
                                 if tax.company_id == company_id:
                                     applicable_taxes.append(tax.id)
 
-                        values['invoice_line_tax_id'] = [[6, 0, applicable_taxes]]
-
+                        values['invoice_line_tax_id'] = [[6, 0, applicable_taxes]]	
         return super(invoice_line_with_custom_create, self).create(cr, uid, values, context=context)
