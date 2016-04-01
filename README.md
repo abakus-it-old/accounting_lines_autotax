@@ -16,3 +16,5 @@ This works for:
     - invoice in
     - refund out
     - refund in
+
+This module has been developed by Valentin THIRION @ AbAKUS it-solutions.
