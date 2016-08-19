@@ -1,6 +1,6 @@
 {
     'name': "Auto tax on lines for products",
-    'version': '1.0',
+    'version': '9.0.1.0',
     'depends': ['sale', 'purchase', 'account', 'product_category_taxes'],
     'author': "Valentin THIRION, AbAKUS it-solutions SARL",
     'website': "http://www.abakusitsolutions.eu",
